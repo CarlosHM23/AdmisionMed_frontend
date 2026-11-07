@@ -1,9 +1,11 @@
 // src/api.js
 import axios from 'axios';
 
-const RAW_API = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+const RAW_API = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
 export const API_PREFIX = '/api';
-export const API_URL = RAW_API + API_PREFIX;
+
+// Garantiza que API_URL termine en /api sin duplicarlo (sirve tanto si la variable trae /api como si no)
+export const API_URL = RAW_API.endsWith('/api') ? RAW_API : (RAW_API + API_PREFIX);
 
 const api = axios.create({
   baseURL: API_URL,
@@ -18,13 +20,11 @@ function _readStoredToken() {
   }
 }
 
-
 api.interceptors.request.use((config) => {
   const token = _readStoredToken();
   if (token) config.headers = { ...(config.headers || {}), Authorization: `Bearer ${token}` };
   return config;
 });
-
 
 api.interceptors.response.use(
   (res) => res,
