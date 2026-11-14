@@ -17,6 +17,7 @@ html, body, #root {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  
 }
 
 .login-box {
@@ -30,8 +31,10 @@ html, body, #root {
   /* Sombra más amplia y delicada en tono azul */
   box-shadow: 0 20px 50px rgba(0, 90, 130, 0.25);
   border-radius: 16px;
-  overflow: hidden;
+  overflow: ;
   background: #ffffff;
+  margin: 0 20px;
+  padding: 5px;
 }
 
 .login-left {
@@ -63,6 +66,7 @@ html, body, #root {
   color: #01579b; /* Azul corporativo médico */
   font-weight: 700;
   letter-spacing: -0.5px;
+  font-family: sans-serif;
 }
 
 .login-form {
@@ -96,11 +100,12 @@ html, body, #root {
 
 /* tighten spacing for small screens */
 @media (max-width: 880px) {
-  .login-box { flex-direction: column; height: auto; }
+  .login-box { flex-direction: column; height: auto; width: auto; box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, #1976d2;}
   .login-left, .login-right { width: 100%; }
   .login-left { height: 160px; }
   .login-right { padding: 20px; }
   .login-card { padding: 14px; }
+  
 }
 
 @media (max-width: 800px) {
