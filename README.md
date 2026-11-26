@@ -1,5 +1,19 @@
 # React + Vite
 
+## Pruebas E2E
+
+Las pruebas Playwright cubren autenticación, rutas protegidas, edición del perfil,
+cambio de contraseña y control de acceso `CP-ADM-15`. Las respuestas de la API
+Laravel se interceptan para que la suite sea reproducible sin credenciales ni
+datos backend reales; también se comprueban las solicitudes que la interfaz emite.
+
+Instala el navegador de Playwright una vez y ejecuta la suite:
+
+```sh
+npx playwright install chromium
+npm run test:e2e
+```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
