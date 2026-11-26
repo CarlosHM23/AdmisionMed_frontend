@@ -202,11 +202,11 @@ export default function AdminLayout() {
 
   const menuItems = [
     { text: 'Dashboard', icon: <DashboardIcon />, path: '/admin', allowedRoles: ['operador', 'supervisor'] },
-    { text: 'Citas', icon: <CalendarIcon />, path: '/admin/citas', allowedRoles: ['operador', 'supervisor'] },
+    { text: 'Citas', icon: <CalendarIcon />, path: '/admin/citas', allowedRoles: ['operador', 'supervisor', 'personal_salud'] },
     { text: 'Personal de Salud', icon: <HealthIcon />, path: '/admin/personal', allowedRoles: ['operador', 'supervisor'] },
-    { text: 'Pacientes', icon: <PeopleIcon />, path: '/admin/pacientes', allowedRoles: ['operador', 'supervisor'] },
+    { text: 'Pacientes', icon: <PeopleIcon />, path: '/admin/pacientes', allowedRoles: ['operador', 'supervisor', 'personal_salud'] },
     { text: 'Archivados', icon: <PersonOffIcon />, path: '/admin/archivados', allowedRoles: ['operador', 'supervisor'] },
-    { text: 'Reportes', icon: <InventoryIcon />, path: '/admin/reportes', allowedRoles: ['operador', 'supervisor'] },
+    { text: 'Reportes', icon: <InventoryIcon />, path: '/admin/reportes', allowedRoles: ['operador', 'supervisor', 'personal_salud'] },
     { text: 'Especialidades', icon: <CategoryIcon />, path: '/admin/especialidades', allowedRoles: ['supervisor'] },
     { text: 'Operadores', icon: <OperatorIcon />, path: '/admin/operadores', allowedRoles: ['supervisor'] },
     { text: 'Usuarios', icon: <PeopleIcon />, path: '/admin/users', allowedRoles: ['supervisor'] },

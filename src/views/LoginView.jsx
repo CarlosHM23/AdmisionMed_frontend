@@ -5,12 +5,13 @@ import { AuthContext } from '../contexts/AuthContext';
 import '../styles/login.css';
 
 export default function LoginView() {
-  const { isAuthenticated, loading } = useContext(AuthContext);
+  const { isAuthenticated, loading, hasRole } = useContext(AuthContext);
   const location = useLocation();
   const from = location.state?.from?.pathname || '/welcome';
+  const destino = location.state?.from?.pathname || (hasRole('personal_salud') ? '/admin/citas' : '/admin');
 
   if (!loading && isAuthenticated) {
-    return <Navigate to="/admin" replace />;
+    return <Navigate to={destino} replace />;
   }
 
   return (

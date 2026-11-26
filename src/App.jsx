@@ -37,7 +37,7 @@ export default function App() {
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="perfil" element={<ProtectedRoute><Perfil /></ProtectedRoute>} />
-            <Route path="users" element={<ProtectedRoute requiredRoles={['supervisor','operator']}><Users /></ProtectedRoute>} />
+            <Route path="users" element={<ProtectedRoute requiredRole="supervisor"><Users /></ProtectedRoute>} />
             <Route path="citas" element={<ProtectedRoute><Citas /></ProtectedRoute>} />
             <Route path="personal" element={<ProtectedRoute><Personal /></ProtectedRoute>} />
             <Route path="reportes" element={<ProtectedRoute><Reportes /></ProtectedRoute>} />
